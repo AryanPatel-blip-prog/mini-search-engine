@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Verify OTP</title></head>
+<body style="text-align:center;">
+    <h2>Enter OTP</h2>
+
+    <form method="POST">
+        <input type="text" name="otp" placeholder="6-digit code" required>
+        <button type="submit">Verify</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% for msg in messages %}
+            <p style="color:red;">{{ msg }}</p>
+        {% endfor %}
+    {% endwith %}
+</body>
+</html>
