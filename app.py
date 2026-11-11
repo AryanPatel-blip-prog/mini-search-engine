@@ -15,7 +15,7 @@ from search import search
 from utils import save_data, load_data
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"  # 🔐 Change later
+app.secret_key = os.environ.get("SECRET_KEY", "local-development-key")  # 🔐 Change later
 bcrypt = Bcrypt(app)
 
 # ---------------- DATABASE ---------------- #
